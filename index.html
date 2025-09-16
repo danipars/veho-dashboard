@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veho Colombia: Workspace Strategy Dashboard 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        .dashboard-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .desk {
+            border-radius: 0.375rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            aspect-ratio: 1 / 1;
+            min-height: 40px;
+        }
+        .desk-liveops { background-color: #3b82f6; color: white; } /* Blue-500 */
+        .desk-hq { background-color: #10b981; color: white; } /* Emerald-500 */
+        .table-header { background-color: #f3f4f6; } /* Gray-100 */
+
+        /* Custom scrollbar for better aesthetics */
+        .blueprint-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .blueprint-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .blueprint-scroll::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .blueprint-scroll::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="flex items-center space-x-4">
+                <img src="https://assets-global.website-files.com/6131306169265a751b1248f2/6131306169265a0e5b124929_veho-logo-gradient.svg" alt="Veho Logo" class="h-10">
+                <h1 class="text-3xl font-bold text-gray-800">Colombia LATAM Hub: Workspace Strategy 2025</h1>
+            </div>
+            <p class="text-gray-500 mt-1">A data-driven proposal for optimizing our 73-desk space at WeWork Bogotá 81.</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Left Column -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Blueprint Card -->
+                <section id="blueprint" class="dashboard-card p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Definitive 73-Desk Blueprint</h2>
+                    <div class="flex flex-wrap gap-4 mb-4">
+                        <div class="flex items-center"><span class="w-4 h-4 rounded-full bg-blue-500 mr-2"></span> 50 Fixed Desks: Live-Ops Team</div>
+                        <div class="flex items-center"><span class="w-4 h-4 rounded-full bg-emerald-500 mr-2"></span> 23 Hot Desks: HQ Hybrid Teams</div>
+                    </div>
+                    
+                    <div class="blueprint-scroll overflow-x-auto pb-4">
+                        <div class="grid grid-cols-10 gap-2 min-w-[600px]">
+                            <!-- Generating 73 desks -->
+                            <script>
+                                const container = document.currentScript.parentElement;
+                                for (let i = 1; i <= 73; i++) {
+                                    let deskType = '';
+                                    let deskLabel = '';
+                                    if (i <= 50) {
+                                        deskType = 'desk-liveops';
+                                        deskLabel = `L${i}`;
+                                    } else {
+                                        deskType = 'desk-hq';
+                                        deskLabel = `H${i - 50}`;
+                                    }
+                                    container.innerHTML += `<div class="desk ${deskType}">${deskLabel}</div>`;
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4">
+                        This layout permanently allocates 50 desks for our 5-day on-site Live-Ops team, ensuring operational stability. The remaining 23 desks are designated as bookable "hot desks" for the 23 hybrid HQ contractors, managed via the Officely platform. This configuration is optimized for our current headcount and supports our collaborative work model without requiring further expansion.
+                    </p>
+                </section>
+
+                <!-- 4-Week Rotation Schedule -->
+                <section id="schedule" class="dashboard-card p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">4-Week Smart Rotation Schedule for HQ Teams</h2>
+                    <p class="text-sm text-gray-600 mb-4">This schedule guarantees cross-team mingling, fairly distributes popular office days, and ensures all 23 HQ team members attend the office each week, maximizing collaboration and space utilization.</p>
+                    
+                     <!-- Team Groups -->
+                    <div class="mb-4 p-4 bg-gray-50 rounded-lg">
+                         <h3 class="font-semibold text-gray-700 mb-2">Hybrid Team Groups:</h3>
+                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
+                            <p><strong class="text-blue-600">Group A:</strong> HR, Finance, IT</p>
+                            <p><strong class="text-emerald-600">Group B:</strong> Sales, Client Success</p>
+                            <p><strong class="text-purple-600">Group C:</strong> Data, Network, L&D</p>
+                         </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase table-header">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 rounded-l-lg">Week</th>
+                                    <th scope="col" class="px-6 py-3">Monday</th>
+                                    <th scope="col" class="px-6 py-3">Tuesday</th>
+                                    <th scope="col" class="px-6 py-3">Wednesday</th>
+                                    <th scope="col" class="px-6 py-3">Thursday</th>
+                                    <th scope="col" class="px-6 py-3 rounded-r-lg">Friday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Week 1 -->
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 font-medium text-gray-900">1.a (3/2) & 1.b (2/3)</td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span>, <span class="font-bold text-purple-600">C</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-purple-600">C</span></td>
+                                </tr>
+                                <!-- Week 2 -->
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 font-medium text-gray-900">2.a (3/2) & 2.b (2/3)</td>
+                                    <td class="px-6 py-4"><span class="font-bold text-purple-600">C</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span>, <span class="font-bold text-purple-600">C</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span></td>
+                                </tr>
+                                <!-- Week 3 -->
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 font-medium text-gray-900">3.a (3/2) & 3.b (2/3)</td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-purple-600">C</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span>, <span class="font-bold text-purple-600">C</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span></td>
+                                </tr>
+                                <!-- Week 4 -->
+                                <tr class="bg-white">
+                                    <td class="px-6 py-4 font-medium text-gray-900">4.a (3/2) & 4.b (2/3)</td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span>, <span class="font-bold text-purple-600">C</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-purple-600">C</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-blue-600">A</span></td>
+                                    <td class="px-6 py-4"><span class="font-bold text-emerald-600">B</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="lg:col-span-1 space-y-6">
+                <!-- Utilization & Efficiency -->
+                <section class="dashboard-card p-6 text-center">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">Space Utilization & Efficiency</h2>
+                    <p class="text-5xl font-bold text-emerald-500">99%+</p>
+                    <p class="font-semibold text-gray-600">Strategic Capacity</p>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Our model ensures that we have the exact number of desks required to meet peak demand on collaboration days. We are paying only for what we need, achieving over 99% strategic efficiency by eliminating waste from unused desks.
+                    </p>
+                </section>
+
+                <!-- Financial Justification -->
+                <section id="finance" class="dashboard-card p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Financial Justification</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 6a7.5 7.5 0 100 12 7.5 7.5 0 000-12z" /></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-700">Annual Savings</p>
+                                <p class="text-2xl font-bold text-green-600">$151,200</p>
+                                <p class="text-sm text-gray-500">From hot-desking efficiency vs. dedicated desks for all.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center">
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-700">Productivity Gains</p>
+                                <p class="text-2xl font-bold text-blue-600">$250,000</p>
+                                <p class="text-sm text-gray-500">Value from increased cross-team collaboration and innovation.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-700">Retention Savings</p>
+                                <p class="text-2xl font-bold text-purple-600">$100,000</p>
+                                <p class="text-sm text-gray-500">Cost savings from reduced attrition due to stronger team culture.</p>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t">
+                             <p class="font-semibold text-gray-700">Total Estimated ROI</p>
+                             <p class="text-3xl font-bold text-gray-800">$501,200 (160%)</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Culture Amplification -->
+                <section id="culture" class="dashboard-card p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Culture Amplification</h2>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            <span><strong>Smart Hot-Desking with Officely:</strong> Empowers contractors with booking flexibility while ensuring 100% desk availability for those scheduled on-site.</span>
+                        </li>
+                        <li class="flex items-start">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            <span><strong>"Team UP" Collaboration Days:</strong> The schedule creates peak days (e.g., Wednesdays in Week 1) that naturally become high-energy collaboration hubs.</span>
+                        </li>
+                        <li class="flex items-start">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            <span><strong>Guaranteed Cross-Teaming:</strong> The 4-week rotation ensures every HQ contractor has the opportunity to connect with colleagues outside their immediate team multiple times a month, strengthening camaraderie.</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
